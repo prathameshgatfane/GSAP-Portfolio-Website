@@ -20,6 +20,7 @@ body {
   background-color: rgb(232 232 227/1);
 }
 
+
 .preloader {
   background-color: #000;
   height: 100vh;
@@ -98,6 +99,8 @@ header .menu a {
   transition-duration: 0.6s;
   transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
 }
+
+
 
 /* Page 1 */
 
@@ -397,19 +400,24 @@ header .menu a {
   width: 50%;
   height: 100vh;
 }
-#page3 .topright .image1{
- width: 100%;
- height: 100%;
- object-fit: cover;
- position: relative;
- overflow: hidden;
-}
-#page3 .topright .image1 img{
+#page3 .topright .image1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent; /* or match page bg */
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  position: relative;
- }
+  overflow: hidden;
+}
+
+#page3 .topright .image1 img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+
+
 #page3 .num {
   font-size: 20rem;
   color: #a19d99;
@@ -427,3 +435,145 @@ header .menu a {
   left: 230px;
   scrollbar-width: none;
 }
+
+/* ─────────────────────────
+   Certificates Section
+───────────────────────── */
+.certificates-section {
+  background-color: #111;
+  padding: clamp(4rem, 4vw, 6rem) clamp(2rem, 2vw, 4rem);
+  color: #eaeaea;
+}
+
+.certificates-section .section-header h2 {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  text-transform: uppercase;
+  color: #d1d1c7;
+  display: inline-block;
+  margin-bottom: 2rem;
+}
+
+.certificates-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 2rem;
+}
+
+.certificate-card {
+  background-color: #1a1a1a;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(255,255,255,0.05);
+  padding: 1rem;
+}
+
+.certificate-card img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  border-radius: 0.5rem;
+}
+
+.certificate-card a {
+  display: inline-block;
+  margin-top: 0.75rem;
+  padding: 0.5rem 1rem;
+  background-color: teal;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 0.5rem;
+  transition: background-color 0.3s ease;
+}
+
+.certificate-card a:hover {
+  background-color: #0b7a75;
+}
+
+
+/* ======= Classy Contact Section Footer ======= */
+.contact-section {
+  background-color: #0d0d0d;
+  color: #eaeaea;
+  padding: 4rem 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top: 1px solid #333;
+}
+
+.contact-container {
+  max-width: 1200px;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.contact-left,
+.contact-right {
+  flex: 1 1 300px;
+}
+
+.contact-left h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #f5f5f5;
+  text-transform: uppercase;
+}
+
+.contact-left p {
+  font-size: 1rem;
+  color: #ccc;
+  line-height: 1.6;
+}
+
+.contact-details {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: 1rem;
+  color: #ccc;
+}
+
+.contact-details li {
+  margin-bottom: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.contact-details a {
+  color: #e5b76c;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.contact-details a:hover {
+  color: #ffcc80;
+  text-decoration: underline;
+}
+
+/* Responsive for small screens */
+@media (max-width: 768px) {
+  .contact-container {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  }
+
+  .contact-left,
+  .contact-right {
+    flex: 1 1 100%;
+  }
+
+  .contact-left h2 {
+    font-size: 1.5rem;
+  }
+
+  .contact-details {
+    font-size: 0.95rem;
+  }
+}
+
