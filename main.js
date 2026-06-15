@@ -188,7 +188,7 @@ text3.forEach((text) => {
   gsap.set(text, { y: "100%", opacity: 0 }); // Set initial state for each span
 });
 
-// Animate the text spans when #page2 appears
+// Animate the text spans when #page3 appears
 gsap.to(text3, {
   y: 0,
   opacity: 1,
@@ -201,3 +201,204 @@ gsap.to(text3, {
     toggleActions: "play none none none",
   },
 });
+
+// Project showcase scroll animation
+const panels = gsap.utils.toArray(".project-panel");
+const numbers = gsap.utils.toArray(".topleft .num");
+
+if (panels.length > 1) {
+  let mm = gsap.matchMedia();
+
+  mm.add("(min-width: 769px)", () => {
+    const projectTL = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".topMain",
+        start: "top top",
+        end: () => "+=" + (panels.length * 100) + "%",
+        pin: true,
+        scrub: 1,
+      }
+    });
+
+    panels.forEach((panel, i) => {
+      if (i === 0) return; // First panel is already visible
+      
+      // Fade out previous panel, fade in current
+      projectTL.to(panels[i - 1], { opacity: 0, duration: 0.5 }, i - 1);
+      projectTL.to(panel, { opacity: 1, duration: 0.5 }, i - 1);
+      
+      // Scroll the numbers up
+      projectTL.to(numbers, { 
+        y: () => -i * numbers[0].offsetHeight, 
+        duration: 0.5 
+      }, i - 1);
+    });
+  });
+
+  mm.add("(max-width: 768px)", () => {
+    // On mobile, just make all panels visible, CSS will stack them naturally
+    panels.forEach(p => gsap.set(p, { opacity: 1 }));
+  });
+}
+
+// Experience section animations
+const exTexts = document.querySelectorAll("#experience h2 span");
+exTexts.forEach((text) => {
+  gsap.set(text, { y: "100%", opacity: 0 });
+});
+gsap.to(exTexts, {
+  y: 0,
+  opacity: 1,
+  stagger: 0.2,
+  duration: 1,
+  ease: "power4.out",
+  scrollTrigger: {
+    trigger: "#experience",
+    start: "top 90%",
+    toggleActions: "play none none none",
+  },
+});
+
+gsap.to(".ex1", {
+  duration: 3,
+  scrollTrigger: {
+    trigger: ".ex1",
+    start: "top 10%",
+    end: "bottom -27%",
+    scrub: true,
+    pin: true,
+    pinSpacing: false,
+  },
+});
+
+gsap.to(".ex2", {
+  duration: 3,
+  scrollTrigger: {
+    trigger: ".ex2",
+    start: "top 27%",
+    end: "bottom 40%",
+    scrub: true,
+    pin: true,
+    pinSpacing: false,
+  },
+});
+
+// Skills section animations
+const skillTexts = document.querySelectorAll("#skills h2 span");
+skillTexts.forEach((text) => {
+  gsap.set(text, { y: "100%", opacity: 0 });
+});
+gsap.to(skillTexts, {
+  y: 0,
+  opacity: 1,
+  stagger: 0.2,
+  duration: 1,
+  ease: "power4.out",
+  scrollTrigger: {
+    trigger: "#skills",
+    start: "top 90%",
+    toggleActions: "play none none none",
+  },
+});
+
+// Education section animations
+const edTexts = document.querySelectorAll("#education h2 span");
+edTexts.forEach((text) => {
+  gsap.set(text, { y: "100%", opacity: 0 });
+});
+gsap.to(edTexts, {
+  y: 0,
+  opacity: 1,
+  stagger: 0.2,
+  duration: 1,
+  ease: "power4.out",
+  scrollTrigger: {
+    trigger: "#education",
+    start: "top 90%",
+    toggleActions: "play none none none",
+  },
+});
+
+let mmEd = gsap.matchMedia();
+
+mmEd.add("(min-width: 769px)", () => {
+  gsap.to(".ed1", {
+    duration: 3,
+    scrollTrigger: {
+      trigger: ".ed1",
+      start: "top 10%",
+      end: "bottom -27%",
+      scrub: true,
+      pin: true,
+      pinSpacing: false,
+    },
+  });
+
+  gsap.to(".ed2", {
+    duration: 3,
+    scrollTrigger: {
+      trigger: ".ed2",
+      start: "top 27%",
+      end: "bottom 40%",
+      scrub: true,
+      pin: true,
+      pinSpacing: false,
+    },
+  });
+});
+
+// About section animations
+const aboutTexts = document.querySelectorAll("#about h2 span");
+aboutTexts.forEach((text) => {
+  gsap.set(text, { y: "100%", opacity: 0 });
+});
+gsap.to(aboutTexts, {
+  y: 0,
+  opacity: 1,
+  stagger: 0.2,
+  duration: 1,
+  ease: "power4.out",
+  scrollTrigger: {
+    trigger: "#about",
+    start: "top 90%",
+    toggleActions: "play none none none",
+  },
+});
+
+// Lightbox Preview Functions
+function openLightbox(src, title) {
+  const lightbox = document.getElementById('lightbox');
+  const img = document.getElementById('lightbox-img');
+  const titleEl = document.getElementById('lightbox-title');
+  
+  img.src = src;
+  titleEl.textContent = title;
+  
+  lightbox.classList.add('active');
+  document.body.style.overflow = 'hidden'; // Prevent background scrolling
+}
+
+function closeLightbox() {
+  const lightbox = document.getElementById('lightbox');
+  lightbox.classList.remove('active');
+  document.body.style.overflow = ''; // Restore scrolling
+}
+
+// Mobile menu toggle logic
+const navToggle = document.querySelector(".nav-toggle");
+const menu = document.querySelector("header .menu");
+const navLinks = document.querySelectorAll("header .menu a");
+
+if (navToggle && menu) {
+  navToggle.addEventListener("click", () => {
+    navToggle.classList.toggle("active");
+    menu.classList.toggle("active");
+  });
+
+  navLinks.forEach(link => {
+    link.addEventListener("click", () => {
+      navToggle.classList.remove("active");
+      menu.classList.remove("active");
+    });
+  });
+}
