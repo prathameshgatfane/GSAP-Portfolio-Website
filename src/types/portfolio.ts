@@ -71,10 +71,16 @@ export interface CertificateItem {
   id: string;
   title: string;
   track: string;
+  issuer: string;
+  issuedDate: string;
+  description: string;
+  credentialCode?: string;
+  verifyUrl?: string;
   imageSrc: string;
   imageAlt: string;
-  pdfHref: string;
-  downloadName: string;
+  badgeVariant?: 'global-ai';
+  pdfHref?: string;
+  downloadName?: string;
 }
 
 export interface EducationItem {

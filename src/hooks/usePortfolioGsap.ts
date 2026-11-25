@@ -40,7 +40,6 @@ export function usePortfolioGsap(containerRef: RefObject<HTMLDivElement | null>)
       };
 
       animateSectionBlocks('.craft-reveal', '#craft');
-      animateSectionBlocks('.works-feed-reveal', '#works');
       animateSectionBlocks('.exp-card-reveal', '#experience');
       animateSectionBlocks('.skill-row-reveal', '#skills');
       animateSectionBlocks('.cred-reveal', '#credentials');

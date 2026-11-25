@@ -350,28 +350,72 @@ export const ACHIEVEMENTS_DATA: AchievementItem[] = [
 ];
 
 export const TRAINING_SUMMARY = {
-  provider: 'Coding Ninjas — Full Stack Web Development',
-  tracks: 'Frontend Development · Java Programming',
+  provider: 'Coding Ninjas · Deloitte · Global AI Community',
+  tracks: 'Full Stack Development · Java · Cyber Security · Community Lead',
 };
 
 export const CERTIFICATES_DATA: CertificateItem[] = [
   {
     id: 'js-bootcamp',
-    title: 'Frontend Development (JavaScript)',
-    track: 'Coding Ninjas',
-    imageSrc: '/img/Intro_to_Javascript.jpg',
-    imageAlt: 'Coding Ninjas Frontend Development Certificate',
+    title: 'Bootcamp | Front End | Full Stack Development',
+    track: 'Full Stack & JavaScript',
+    issuer: 'Coding Ninjas',
+    issuedDate: 'June ‘24 – September ‘24',
+    description:
+      'Certificate of Completion awarded to Prathamesh Nitinrao Gatfane for completing Full Stack Web Development. Mentored by Ankush Singla.',
+    imageSrc: '/assets/aistudio/image_106e4637.png',
+    imageAlt:
+      'Coding Ninjas Certificate of Completion for Bootcamp Front End Full Stack Development awarded to Prathamesh Nitinrao Gatfane',
     pdfHref: '/CN_Javascript_Certificate.pdf',
     downloadName: 'CN_Javascript_Certificate.pdf',
   },
   {
     id: 'java-intro',
-    title: 'Java Programming',
-    track: 'Coding Ninjas',
-    imageSrc: '/img/Intro_to_java.jpg',
-    imageAlt: 'Coding Ninjas Java Programming Certificate',
+    title: 'Bootcamp | Introduction to Java',
+    track: 'Top Performer · Certificate of Excellence',
+    issuer: 'Coding Ninjas',
+    issuedDate: 'October 2023 – November 2023',
+    credentialCode: 'Verify ID: 12e15dcd92225a2c',
+    verifyUrl: 'https://certificate.codingninjas.com/verify/12e15dcd92225a2c',
+    description:
+      'Top Performer Certificate of Excellence awarded to Prathamesh Nitinrao Gatfane. Mentored by Manisha Khattar & Ankush Singla.',
+    imageSrc: '/assets/aistudio/image_b9bf0c17.png',
+    imageAlt:
+      'Coding Ninjas Certificate of Excellence Top Performer for Introduction to Java awarded to Prathamesh Nitinrao Gatfane',
     pdfHref: '/CN_Java_Certificate.pdf',
     downloadName: 'CN_Java_Certificate.pdf',
+  },
+  {
+    id: 'deloitte-cyber',
+    title: 'Cyber Job Simulation',
+    track: 'Cyber Security · Forage',
+    issuer: 'Deloitte',
+    issuedDate: 'May 30th, 2025',
+    credentialCode: 'Code: 9PN5ZMuPFvdxAHpTK',
+    description:
+      'Certificate of Completion awarded to Prathamesh Gatfane for completing practical Cyber Security tasks. Signed by Tina McCreery, CHRO.',
+    imageSrc: '/assets/aistudio/image_4bd68340.png',
+    imageAlt:
+      'Deloitte Cyber Job Simulation Certificate of Completion awarded to Prathamesh Gatfane',
+    pdfHref:
+      '/assets/aistudio/deloittes-virtual-cyberSecurity-internship__9f237a0a.pdf',
+    downloadName: 'Deloitte_Cyber_Job_Simulation_Prathamesh_Gatfane.pdf',
+  },
+  {
+    id: 'global-ai-badge',
+    title: 'Global AI Community Contributor & MSC Lead',
+    track: 'Verified Community Badge',
+    issuer: 'Global AI Community × MSC PRPCEM',
+    issuedDate: 'Verified Credential',
+    credentialCode: 'Badge: fe617007-4f60-4868-b6a6-daec799b1200',
+    verifyUrl:
+      'https://globalai.community/badges/fe617007-4f60-4868-b6a6-daec799b1200/',
+    badgeVariant: 'global-ai',
+    imageSrc: '',
+    imageAlt:
+      'Global AI Community Contributor and Microsoft Student Club Lead badge for Prathamesh Nitinrao Gatfane',
+    description:
+      'Recognized Global AI Community Contributor and Lead for Documentation, Editorial & Content at Microsoft Student Club PRPCEM, Amravati.',
   },
 ];
 
