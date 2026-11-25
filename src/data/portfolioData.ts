@@ -11,6 +11,13 @@ import type {
   SocialLinkItem,
 } from '../types/portfolio';
 
+const BASE_URL = import.meta.env.BASE_URL.endsWith('/')
+  ? import.meta.env.BASE_URL
+  : `${import.meta.env.BASE_URL}/`;
+
+const withBase = (path: string): string =>
+  `${BASE_URL}${path.replace(/^\/+/, '')}`;
+
 export const PORTFOLIO_PROFILE = {
   brandName: 'By PRATHAMESH GATFANE',
   roleLabel: '(Full Stack Web Developer)',
@@ -19,11 +26,11 @@ export const PORTFOLIO_PROFILE = {
     'I help growing brands and startups gain an unfair advantage through premium, results driven websites.',
   heroPhoneHref: 'tel:+917558792533',
   heroPhoneDisplay: '+91-7558792533',
-  heroImageSrc: '/img/heroImage.jpg',
+  heroImageSrc: withBase('img/heroImage.jpg'),
   heroImageAlt: 'Prathamesh Gatfane portrait',
   availabilityPrompt: 'Available for freelance work from',
   availabilityDate: 'June ‘25',
-  resumePath: '/assets/aistudio/PrathameshGatfane_FullStackDeveloper__2__287d3e64.pdf',
+  resumePath: withBase('assets/aistudio/PrathameshGatfane_FullStackDeveloper__2__287d3e64.pdf'),
   email: 'prathameshgatfane2019@gmail.com',
   location: 'Amravati, India',
   summaryKicker: 'Profile Summary',
@@ -43,7 +50,7 @@ export const NAV_LINKS: NavLinkItem[] = [
   {
     id: 'resume',
     label: 'Resume,',
-    href: '/assets/aistudio/PrathameshGatfane_FullStackDeveloper__2__287d3e64.pdf',
+    href: withBase('assets/aistudio/PrathameshGatfane_FullStackDeveloper__2__287d3e64.pdf'),
     isExternal: true,
     isResume: true,
   },
@@ -109,7 +116,7 @@ export const PROJECTS_DATA: ProjectItem[] = [
     description:
       'Hospital platform with online appointment booking, automated email notifications, admin panel for appointments, consultants & gallery, image optimization, and SEO via React Helmet.',
     techStack: ['MongoDB', 'Express.js', 'React.js', 'Node.js', 'Nodemailer'],
-    imageSrc: '/img/vyawahare.png',
+    imageSrc: withBase('img/vyawahare.png'),
     imageAlt: 'Vyawahare Netralaya web platform preview',
     aspect: 'portrait',
     highlights: [
@@ -134,7 +141,7 @@ export const PROJECTS_DATA: ProjectItem[] = [
     description:
       'Developed and deployed a responsive static frontend for a dermatology clinic with modern UI, smooth navigation, and optimized performance.',
     techStack: ['React.js', 'JavaScript', 'Tailwind CSS'],
-    imageSrc: '/img/skintotal.png',
+    imageSrc: withBase('img/skintotal.png'),
     imageAlt: 'Skintotal Clinic web interface preview',
     aspect: 'square',
     highlights: [
@@ -199,7 +206,7 @@ export const PROJECTS_DATA: ProjectItem[] = [
     description:
       'Responsive insurance platform frontend crafted with sleek navigation, clear policy discovery flows, and crisp responsive layouts.',
     techStack: ['React.js', 'Tailwind CSS'],
-    imageSrc: '/img/insurekaro.png',
+    imageSrc: withBase('img/insurekaro.png'),
     imageAlt: 'Insure Karo web interface preview',
     aspect: 'portrait',
     highlights: [
@@ -223,7 +230,7 @@ export const PROJECTS_DATA: ProjectItem[] = [
     description:
       'Full-stack platform with multi-role authentication (Admin, Shelter, Rescuer) and CRUD operations for rescue and adoption workflows.',
     techStack: ['Ruby on Rails', 'MySQL', 'Bootstrap'],
-    imageSrc: '/img/aasra_project.png',
+    imageSrc: withBase('img/aasra_project.png'),
     imageAlt: 'AASRA platform preview',
     aspect: 'square',
     highlights: [
@@ -363,10 +370,10 @@ export const CERTIFICATES_DATA: CertificateItem[] = [
     issuedDate: 'June ‘24 – September ‘24',
     description:
       'Certificate of Completion awarded to Prathamesh Nitinrao Gatfane for completing Full Stack Web Development. Mentored by Ankush Singla.',
-    imageSrc: '/assets/aistudio/image_106e4637.png',
+    imageSrc: withBase('assets/aistudio/image_106e4637.png'),
     imageAlt:
       'Coding Ninjas Certificate of Completion for Bootcamp Front End Full Stack Development awarded to Prathamesh Nitinrao Gatfane',
-    pdfHref: '/CN_Javascript_Certificate.pdf',
+    pdfHref: withBase('CN_Javascript_Certificate.pdf'),
     downloadName: 'CN_Javascript_Certificate.pdf',
   },
   {
@@ -379,10 +386,10 @@ export const CERTIFICATES_DATA: CertificateItem[] = [
     verifyUrl: 'https://certificate.codingninjas.com/verify/12e15dcd92225a2c',
     description:
       'Top Performer Certificate of Excellence awarded to Prathamesh Nitinrao Gatfane. Mentored by Manisha Khattar & Ankush Singla.',
-    imageSrc: '/assets/aistudio/image_b9bf0c17.png',
+    imageSrc: withBase('assets/aistudio/image_b9bf0c17.png'),
     imageAlt:
       'Coding Ninjas Certificate of Excellence Top Performer for Introduction to Java awarded to Prathamesh Nitinrao Gatfane',
-    pdfHref: '/CN_Java_Certificate.pdf',
+    pdfHref: withBase('CN_Java_Certificate.pdf'),
     downloadName: 'CN_Java_Certificate.pdf',
   },
   {
@@ -394,11 +401,12 @@ export const CERTIFICATES_DATA: CertificateItem[] = [
     credentialCode: 'Code: 9PN5ZMuPFvdxAHpTK',
     description:
       'Certificate of Completion awarded to Prathamesh Gatfane for completing practical Cyber Security tasks. Signed by Tina McCreery, CHRO.',
-    imageSrc: '/assets/aistudio/image_4bd68340.png',
+    imageSrc: withBase('assets/aistudio/image_4bd68340.png'),
     imageAlt:
       'Deloitte Cyber Job Simulation Certificate of Completion awarded to Prathamesh Gatfane',
-    pdfHref:
-      '/assets/aistudio/deloittes-virtual-cyberSecurity-internship__9f237a0a.pdf',
+    pdfHref: withBase(
+      'assets/aistudio/deloittes-virtual-cyberSecurity-internship__9f237a0a.pdf',
+    ),
     downloadName: 'Deloitte_Cyber_Job_Simulation_Prathamesh_Gatfane.pdf',
   },
   {
